@@ -10,22 +10,16 @@ chmod 755 /etc/hysteria/hysteria
 
 delay=200
 ip=`curl -4 -s ip.sb`
-download=$(($download + $download / 4))
-upload=$(($upload + $upload / 4))
+download=50
+upload=10
 r_client=$(($delay * 2 * $download / 1000 * 1024 * 1024))
 r_conn=$(($r_client / 4))
 
-if [ -z "${protocol}" ] || [ $protocol == "3" ];then
-  protocol="wechat-video"
-  iptables -I INPUT -p udp --dport ${port} -m comment --comment "allow udp(hihysteria)" -j ACCEPT
-elif [ $protocol == "2" ];then
-  protocol="faketcp"
-  iptables -I INPUT -p tcp --dport ${port}  -m comment --comment "allow tcp(hihysteria)" -j ACCEPT
-else 
-  protocol="udp"
-  iptables -I INPUT -p udp --dport ${port} -m comment --comment "allow udp(hihysteria)" -j ACCEPT
-fi
-
+auth_str="24fd4d15e8aa"
+domain="www.bing.com"
+protocol="udp"
+port=33445
+iptables -I INPUT -p udp --dport ${port} -m comment --comment "allow udp(hihysteria)" -j ACCEPT
 if [ "$domain" = "wechat.com" ];then
 mail="admin@qq.com"
 days=36500
