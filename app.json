@@ -1,7 +1,7 @@
 {
-  "name": "HysteriaHeroku",
-  "description": "Hysteria on heroku",
-  "keywords": ["Hysteria"],
+  "name": "Hyoku",
+  "description": "Hy",
+  "keywords": ["Hyoku"],
   "env": {
     "port": {
       "description": "Hysteria开启的端口",
@@ -9,11 +9,11 @@
     },
     "domain": {
       "description": "输入您的域名，不输入则默认自签wechat.com证书",
-      "value": "wechat.com"
+      "value": "www.bing.com"
     },
     "protocol": {
       "description": "协议类型：1-udp(QUIC)，2-faketcp，3-wechat-video",
-      "value": "3"
+      "value": "1"
     },
     "download": {
       "description": "客户端期望的下行速度(默认50mbps)",
@@ -25,7 +25,7 @@
     },
     "auth_str": {
       "description": "认证口令",
-      "value": ""
+      "value": "1"
     }
   },
   "website": "https://github.com/yuehen7/HerokuHysteria",
