@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-RUN apk update && \
+RUN apk update && apt install -y curl socat && \
     apk add --no-cache ca-certificates wget unzip && \
     rm -rf /var/cache/apk/*
 
